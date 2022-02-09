@@ -1,0 +1,18 @@
+name: ryujinx # you probably want to 'snapcraft register <name>'
+base: core20 # the base snap is the execution environment for this snap
+version: '1.1.21' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Play your favorite Nintendo Switch games on your PC # 79 char long summary
+description: |
+  Ryujinx allows you to play all of your favorite Nintendo Switch games on
+  your PC.  
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+apps:
+  ryujinx:
+    bin/ryujinx
+parts:
+  ryujinx:
+    # See 'snapcraft plugins'
+    plugin: make
+    source: .
